@@ -1,8 +1,8 @@
 package ru.mera.atuzhil.task2;
 
-public class ChocolateMilkCocktailMaker extends CocktailMaker {
+public class BananaMilkCocktailMaker extends CocktailMaker {
     public String getLiquid() {
-        return "chocolate";
+        return "banana";
     }
     public String getMainIngredient() {
         return "milk";
