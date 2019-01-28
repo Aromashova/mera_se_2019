@@ -1,0 +1,7 @@
+package ru.mera.atuzhil.task2;
+
+public class BananaMilkCocktailMaker extends CocktailMaker {
+    public BananaMilkCocktailMaker() {
+        super("banana", "milk", "ice-cream");
+    }
+}
