@@ -20,4 +20,15 @@ public class SmsMessage extends Message {
     }
 
 
+    public static String getSOmeString() {
+        return "sms";
+    }
+
+    public static void main(String[] args) {
+        SmsMessage message = new SmsMessage(null, null, null);
+        Message another = null;
+
+        System.out.println(SmsMessage.getSOmeString());
+        System.out.println(Message.getSOmeString());
+    }
 }

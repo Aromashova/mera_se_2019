@@ -21,6 +21,9 @@ public abstract class  Message {
         return message;
     }
 
+    public static String getSOmeString() {
+        return "message";
+    }
 
     public abstract String getDeliveryMethod();
 
