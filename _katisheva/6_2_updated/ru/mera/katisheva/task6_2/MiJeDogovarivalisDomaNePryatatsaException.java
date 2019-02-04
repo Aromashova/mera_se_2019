@@ -9,6 +9,6 @@ public class MiJeDogovarivalisDomaNePryatatsaException extends Exception {
 
     @Override
     public String toString() {
-        return "\nМы же договаривались дома не прятаться! "+dishonestPerson.getName()+" играет нечестно - игра окончена";
+        return "\n"+dishonestPerson.getName()+" - играет нечестно! Игра остановлена.";
     }
 }
