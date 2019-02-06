@@ -17,11 +17,14 @@ public class BranchedIf {
 
         if(first_parameter>100 || second_parameter>100){
             System.out.println("There is a big number");
-        }else if(second_parameter != 0){
+        }
+        if(second_parameter != 0){
             System.out.println("Division result: " + (float)first_parameter/second_parameter);
-        }else if(first_parameter > second_parameter){
+        }
+        if(first_parameter > second_parameter){
             System.out.println(first_parameter + " is bigger than "+second_parameter);
-        }else if((second_parameter%2) == 0){
+        }
+        if((second_parameter%2) == 0){
             System.out.println("The number " + second_parameter + " is even");
         }
     }
