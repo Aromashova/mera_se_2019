@@ -1,4 +1,4 @@
-package ru.mera.ponomareva;
+package ru.mera.ponomareva.task3;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -12,8 +12,8 @@ public class MailBox {
     EmailMessage[] emailMessages = new EmailMessage[2];
     PaperMessage[] paperMessages = new PaperMessage[2];
 
-    public void addEmailMessage(Person from, Person to, String message, LocalDateTime sendDate){
-        EmailMessage emailMessage = new EmailMessage(from, to, message, sendDate, LocalDateTime.now().plusMinutes(5));
+    public void addEmailMessage(Person from, Person to, String message, LocalDateTime sendDate, LocalDateTime receiveDate){
+        EmailMessage emailMessage = new EmailMessage(from, to, message, sendDate, receiveDate);
         isEmailBoxFull();
         for(int i =0; i<emailMessages.length-1;i++){
             if(emailMessages[i]==null){
@@ -38,59 +38,61 @@ public class MailBox {
 
     public void receiveAllEmailMessages(){
         for(EmailMessage emailMessage:emailMessages){
-            if(emailMessages!=null){
-                System.out.println("New email message received:\n"+
-                                    "From: "+emailMessage.getFrom().getName()+" "+emailMessage.getFrom().getSurname()+"\n"+
-                                    "To: "+emailMessage.getTo().getName()+" "+emailMessage.getTo().getSurname()+"\n"+
-                                    "ru.mera.ponomareva.Message: "+emailMessage.getMessage()+"\n"+
-                                    "Send date "+emailMessage.getSendDate()+"\n"+
-                                    "Receive date "+emailMessage.getRecieveDate()+"\n");
-            }
-            else
+            if(emailMessage==null)
                 break;
+            else{
+                System.out.println("New email message received:\n"+
+                        "From: "+emailMessage.getFrom().getName()+" "+emailMessage.getFrom().getSurname()+"\n"+
+                        "To: "+emailMessage.getTo().getName()+" "+emailMessage.getTo().getSurname()+"\n"+
+                        "Message: "+emailMessage.getMessage()+"\n"+
+                        "Send date "+emailMessage.getSendDate()+"\n"+
+                        "Receive date "+emailMessage.getReceiveDate()+"\n"+
+                        "Array len = "+emailMessages.length+"\n");
+            }
         }
 
     }
 
     public void receiveAllPaperMessages(){
         for (PaperMessage paperMessage:paperMessages){
-            if(paperMessage!=null){
-                System.out.println("New email message received:\n"+
-                                    "From: "+paperMessage.getFrom().getName()+" "+paperMessage.getFrom().getSurname()+"\n"+
-                                    "To: "+paperMessage.getTo().getName()+" "+paperMessage.getTo().getSurname()+"\n"+
-                                    "ru.mera.ponomareva.Message: "+paperMessage.getMessage()+"\n"+
-                                    "From postal index "+paperMessage.getFromPostalIndex()+"\n"+
-                                    "To postal index "+paperMessage.getToPostalIndex()+"\n");
-            }
-            else
+            if(paperMessage==null)
                 break;
+            else{
+                System.out.println("New paper message received:\n"+
+                        "From: "+paperMessage.getFrom().getName()+" "+paperMessage.getFrom().getSurname()+"\n"+
+                        "To: "+paperMessage.getTo().getName()+" "+paperMessage.getTo().getSurname()+"\n"+
+                        "Message: "+paperMessage.getMessage()+"\n"+
+                        "From postal index "+paperMessage.getFromPostalIndex()+"\n"+
+                        "To postal index "+paperMessage.getToPostalIndex()+"\n"+
+                        "Array len = "+paperMessages.length+"\n");
+            }
         }
 
     }
 
     public void isEmailBoxFull(){
-        boolean full = false;
+        boolean full = true;
         for(int i =0; i<emailMessages.length-1;i++){
-            if(emailMessages[i]!=null){
-                full = true;
+            if(emailMessages[i]==null){
+                full = false;
                 break;
             }
         }
         if(full){
-            emailMessages = Arrays.copyOf(emailMessages, emailMessages.length*2);
+            emailMessages = Arrays.copyOf(emailMessages, emailMessages.length+2);
         }
     }
 
     public void isPaperBoxFull(){
-        boolean full = false;
+        boolean full = true;
         for(int i =0; i<paperMessages.length-1;i++){
-            if(paperMessages[i]!=null){
-                full = true;
+            if(paperMessages[i]==null){
+                full = false;
                 break;
             }
         }
         if(full){
-            paperMessages = Arrays.copyOf(paperMessages, paperMessages.length*2);
+            paperMessages = Arrays.copyOf(paperMessages, paperMessages.length+2);
         }
 
     }

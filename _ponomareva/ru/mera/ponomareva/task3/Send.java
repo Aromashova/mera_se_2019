@@ -1,4 +1,4 @@
-package ru.mera.ponomareva;
+package ru.mera.ponomareva.task3;
 
 import java.time.LocalDateTime;
 
@@ -14,9 +14,9 @@ public class Send {
         Person receivePerson2 = new Person("July", "Holmes");
         Person receivePerson3 = new Person("Adam", "Smith");
 
-        mailBox.addEmailMessage(sendPerson1, receivePerson1, "First email", LocalDateTime.now());
-        mailBox.addEmailMessage(sendPerson2, receivePerson2, "Second email", LocalDateTime.now());
-        mailBox.addEmailMessage(sendPerson3, receivePerson3, "Third email", LocalDateTime.now());
+        mailBox.addEmailMessage(sendPerson1, receivePerson1, "First email", LocalDateTime.now(), LocalDateTime.now().plusMinutes(5));
+        mailBox.addEmailMessage(sendPerson2, receivePerson2, "Second email", LocalDateTime.now(), LocalDateTime.now().plusMinutes(5));
+        mailBox.addEmailMessage(sendPerson3, receivePerson3, "Third email", LocalDateTime.now(), LocalDateTime.now().plusMinutes(5));
 
         mailBox.addPaperMessage(sendPerson1, receivePerson1, "First paper message", 123456, 951753);
         mailBox.addPaperMessage(sendPerson2, receivePerson2, "Second paper message", 987456, 654321);

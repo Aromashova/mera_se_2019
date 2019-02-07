@@ -1,23 +1,23 @@
-package ru.mera.ponomareva;
+package ru.mera.ponomareva.task3;
 
 import java.time.LocalDateTime;
 
 public class EmailMessage extends Message {
 
     private LocalDateTime sendDate;
-    private LocalDateTime recieveDate;
+    private LocalDateTime receiveDate;
 
     public EmailMessage(Person from, Person to, String message, LocalDateTime sendDate, LocalDateTime receiveDate) {
         super(from, to, message);
         this.sendDate = sendDate;
-        this.recieveDate = recieveDate;
+        this.receiveDate = receiveDate;
     }
 
     public LocalDateTime getSendDate() {
         return sendDate;
     }
 
-    public LocalDateTime getRecieveDate() {
-        return recieveDate;
+    public LocalDateTime getReceiveDate() {
+        return receiveDate;
     }
 }

@@ -1,4 +1,4 @@
-package ru.mera.ponomareva;
+package ru.mera.ponomareva.task3;
 
 public class PaperMessage extends Message {
 
