@@ -1,9 +1,9 @@
 public class GenericsWildcards {
 
-    public static class  Box <T>   {
+    public static class Box <T>   {
         T content;
 
-        public Box(T content) {
+        public Box(T  content) {
             this.content = content;
         }
 
