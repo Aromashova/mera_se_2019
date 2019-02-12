@@ -53,14 +53,14 @@ public class HideAndSeek {
                 if(randomMaster==Master.MasterAction.SAY_HIDE&&player.getCondition()==PlayerCondition.WENT_HOME){
                     throw new MiJeDogovarivalisDomaNePryatatsaException(player);
                 }
-                else if(randomMaster==Master.MasterAction.SAY_NOT_NIDE&&player.getCondition()==PlayerCondition.WENT_HOME){
+                else if(randomMaster==Master.MasterAction.SAY_NOT_HIDE&&player.getCondition()==PlayerCondition.WENT_HOME){
                     System.out.println(player.getName().getMemberName()+", мы в своей игре забыли про тебя. Иди домой!");
                 }
-                else if ((randomMaster==Master.MasterAction.SAY_NOT_NIDE&&player.getCondition()==PlayerCondition.NOT_HIDE) ||
+                else if ((randomMaster==Master.MasterAction.SAY_NOT_HIDE&&player.getCondition()==PlayerCondition.NOT_HIDE) ||
                         (randomMaster==Master.MasterAction.SAY_HIDE&&player.getCondition()==PlayerCondition.HIDE)){
                     losers.add(player);
                 }
-                else if ((randomMaster==Master.MasterAction.SAY_NOT_NIDE&&player.getCondition()==PlayerCondition.HIDE) ||
+                else if ((randomMaster==Master.MasterAction.SAY_NOT_HIDE&&player.getCondition()==PlayerCondition.HIDE) ||
                         (randomMaster==Master.MasterAction.SAY_HIDE&&player.getCondition()==PlayerCondition.NOT_HIDE)){
                     winners.add(player);
                 }

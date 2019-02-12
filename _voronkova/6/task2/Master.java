@@ -18,7 +18,7 @@ public class Master {
 
     enum MasterAction{
         SAY_HIDE ("Прячешься!"),
-        SAY_NOT_NIDE("Не прячешься!");
+        SAY_NOT_HIDE("Не прячешься!");
 
         String actionDescription;
 
